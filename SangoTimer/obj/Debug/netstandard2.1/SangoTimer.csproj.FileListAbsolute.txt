@@ -1,0 +1,10 @@
+E:\FantasyOfSango\SangoUtils\SangoTimer\bin\Debug\netstandard2.1\SangoTimer.deps.json
+E:\FantasyOfSango\SangoUtils\SangoTimer\bin\Debug\netstandard2.1\SangoTimer.dll
+E:\FantasyOfSango\SangoUtils\SangoTimer\bin\Debug\netstandard2.1\SangoTimer.pdb
+E:\FantasyOfSango\SangoUtils\SangoTimer\obj\Debug\netstandard2.1\SangoTimer.csproj.AssemblyReference.cache
+E:\FantasyOfSango\SangoUtils\SangoTimer\obj\Debug\netstandard2.1\SangoTimer.GeneratedMSBuildEditorConfig.editorconfig
+E:\FantasyOfSango\SangoUtils\SangoTimer\obj\Debug\netstandard2.1\SangoTimer.AssemblyInfoInputs.cache
+E:\FantasyOfSango\SangoUtils\SangoTimer\obj\Debug\netstandard2.1\SangoTimer.AssemblyInfo.cs
+E:\FantasyOfSango\SangoUtils\SangoTimer\obj\Debug\netstandard2.1\SangoTimer.csproj.CoreCompileInputs.cache
+E:\FantasyOfSango\SangoUtils\SangoTimer\obj\Debug\netstandard2.1\SangoTimer.dll
+E:\FantasyOfSango\SangoUtils\SangoTimer\obj\Debug\netstandard2.1\SangoTimer.pdb

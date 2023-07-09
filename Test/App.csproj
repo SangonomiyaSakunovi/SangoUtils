@@ -8,7 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SangoIOCPNet\SangoIOCPNet.csproj" />
     <ProjectReference Include="..\SangoLog\SangoLog.csproj" />
+    <ProjectReference Include="..\SangoPriorityQueue\SangoPriorityQueue.csproj" />
+    <ProjectReference Include="..\SangoTimer\SangoTimer.csproj" />
   </ItemGroup>
 
 </Project>

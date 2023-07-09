@@ -1,0 +1,69 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "App/1.0.0": {
+        "dependencies": {
+          "SangoIOCPNet": "1.0.0",
+          "SangoLog": "1.0.0",
+          "SangoPriorityQueue": "1.0.0",
+          "SangoTimer": "1.0.0"
+        },
+        "runtime": {
+          "App.dll": {}
+        }
+      },
+      "SangoIOCPNet/1.0.0": {
+        "runtime": {
+          "SangoIOCPNet.dll": {}
+        }
+      },
+      "SangoLog/1.0.0": {
+        "runtime": {
+          "SangoLog.dll": {}
+        }
+      },
+      "SangoPriorityQueue/1.0.0": {
+        "runtime": {
+          "SangoPriorityQueue.dll": {}
+        }
+      },
+      "SangoTimer/1.0.0": {
+        "runtime": {
+          "SangoTimer.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "App/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SangoIOCPNet/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SangoLog/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SangoPriorityQueue/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SangoTimer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

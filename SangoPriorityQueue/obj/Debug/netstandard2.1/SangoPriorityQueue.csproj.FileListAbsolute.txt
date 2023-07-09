@@ -1,0 +1,10 @@
+E:\FantasyOfSango\SangoUtils\SangoPriorityQueue\bin\Debug\netstandard2.1\SangoPriorityQueue.deps.json
+E:\FantasyOfSango\SangoUtils\SangoPriorityQueue\bin\Debug\netstandard2.1\SangoPriorityQueue.dll
+E:\FantasyOfSango\SangoUtils\SangoPriorityQueue\bin\Debug\netstandard2.1\SangoPriorityQueue.pdb
+E:\FantasyOfSango\SangoUtils\SangoPriorityQueue\obj\Debug\netstandard2.1\SangoPriorityQueue.csproj.AssemblyReference.cache
+E:\FantasyOfSango\SangoUtils\SangoPriorityQueue\obj\Debug\netstandard2.1\SangoPriorityQueue.GeneratedMSBuildEditorConfig.editorconfig
+E:\FantasyOfSango\SangoUtils\SangoPriorityQueue\obj\Debug\netstandard2.1\SangoPriorityQueue.AssemblyInfoInputs.cache
+E:\FantasyOfSango\SangoUtils\SangoPriorityQueue\obj\Debug\netstandard2.1\SangoPriorityQueue.AssemblyInfo.cs
+E:\FantasyOfSango\SangoUtils\SangoPriorityQueue\obj\Debug\netstandard2.1\SangoPriorityQueue.csproj.CoreCompileInputs.cache
+E:\FantasyOfSango\SangoUtils\SangoPriorityQueue\obj\Debug\netstandard2.1\SangoPriorityQueue.dll
+E:\FantasyOfSango\SangoUtils\SangoPriorityQueue\obj\Debug\netstandard2.1\SangoPriorityQueue.pdb

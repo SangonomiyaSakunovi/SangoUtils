@@ -2,6 +2,16 @@
   "version": 3,
   "targets": {
     "net7.0": {
+      "SangoIOCPNet/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/SangoIOCPNet.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SangoIOCPNet.dll": {}
+        }
+      },
       "SangoLog/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
@@ -11,19 +21,57 @@
         "runtime": {
           "bin/placeholder/SangoLog.dll": {}
         }
+      },
+      "SangoPriorityQueue/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/SangoPriorityQueue.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SangoPriorityQueue.dll": {}
+        }
+      },
+      "SangoTimer/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/SangoTimer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SangoTimer.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "SangoIOCPNet/1.0.0": {
+      "type": "project",
+      "path": "../SangoIOCPNet/SangoIOCPNet.csproj",
+      "msbuildProject": "../SangoIOCPNet/SangoIOCPNet.csproj"
+    },
     "SangoLog/1.0.0": {
       "type": "project",
       "path": "../SangoLog/SangoLog.csproj",
       "msbuildProject": "../SangoLog/SangoLog.csproj"
+    },
+    "SangoPriorityQueue/1.0.0": {
+      "type": "project",
+      "path": "../SangoPriorityQueue/SangoPriorityQueue.csproj",
+      "msbuildProject": "../SangoPriorityQueue/SangoPriorityQueue.csproj"
+    },
+    "SangoTimer/1.0.0": {
+      "type": "project",
+      "path": "../SangoTimer/SangoTimer.csproj",
+      "msbuildProject": "../SangoTimer/SangoTimer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "SangoLog >= 1.0.0"
+      "SangoIOCPNet >= 1.0.0",
+      "SangoLog >= 1.0.0",
+      "SangoPriorityQueue >= 1.0.0",
+      "SangoTimer >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -59,8 +107,17 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "E:\\FantasyOfSango\\SangoUtils\\SangoIOCPNet\\SangoIOCPNet.csproj": {
+              "projectPath": "E:\\FantasyOfSango\\SangoUtils\\SangoIOCPNet\\SangoIOCPNet.csproj"
+            },
             "E:\\FantasyOfSango\\SangoUtils\\SangoLog\\SangoLog.csproj": {
               "projectPath": "E:\\FantasyOfSango\\SangoUtils\\SangoLog\\SangoLog.csproj"
+            },
+            "E:\\FantasyOfSango\\SangoUtils\\SangoPriorityQueue\\SangoPriorityQueue.csproj": {
+              "projectPath": "E:\\FantasyOfSango\\SangoUtils\\SangoPriorityQueue\\SangoPriorityQueue.csproj"
+            },
+            "E:\\FantasyOfSango\\SangoUtils\\SangoTimer\\SangoTimer.csproj": {
+              "projectPath": "E:\\FantasyOfSango\\SangoUtils\\SangoTimer\\SangoTimer.csproj"
             }
           }
         }

@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SangoUtils", "SangoUtils\SangoUtils.csproj", "{8C71EA8B-0A4C-451C-941A-EDC800DC55AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SangoLog", "SangoLog\SangoLog.csproj", "{518C92AE-9893-4B92-8DB4-25A8F7D126E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SangoLog", "SangoLog\SangoLog.csproj", "{518C92AE-9893-4B92-8DB4-25A8F7D126E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App", "Test\App.csproj", "{6E8E541F-5685-4ECE-A96D-2BCFDBC259AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{6E8E541F-5685-4ECE-A96D-2BCFDBC259AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SangoTimer", "SangoTimer\SangoTimer.csproj", "{12C4A6BE-5BCB-484A-8CF8-91FF957DC288}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SangoIOCPNet", "SangoIOCPNet\SangoIOCPNet.csproj", "{EA88BDEA-C111-4529-9518-15E3C7E3A2D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SangoPriorityQueue", "SangoPriorityQueue\SangoPriorityQueue.csproj", "{F8DD5E5A-F00B-4C4B-9AA1-09FAC6830C0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8C71EA8B-0A4C-451C-941A-EDC800DC55AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8C71EA8B-0A4C-451C-941A-EDC800DC55AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8C71EA8B-0A4C-451C-941A-EDC800DC55AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8C71EA8B-0A4C-451C-941A-EDC800DC55AA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{518C92AE-9893-4B92-8DB4-25A8F7D126E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{518C92AE-9893-4B92-8DB4-25A8F7D126E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{518C92AE-9893-4B92-8DB4-25A8F7D126E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +27,18 @@ Global
 		{6E8E541F-5685-4ECE-A96D-2BCFDBC259AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E8E541F-5685-4ECE-A96D-2BCFDBC259AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E8E541F-5685-4ECE-A96D-2BCFDBC259AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12C4A6BE-5BCB-484A-8CF8-91FF957DC288}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12C4A6BE-5BCB-484A-8CF8-91FF957DC288}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12C4A6BE-5BCB-484A-8CF8-91FF957DC288}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12C4A6BE-5BCB-484A-8CF8-91FF957DC288}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA88BDEA-C111-4529-9518-15E3C7E3A2D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA88BDEA-C111-4529-9518-15E3C7E3A2D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA88BDEA-C111-4529-9518-15E3C7E3A2D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA88BDEA-C111-4529-9518-15E3C7E3A2D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8DD5E5A-F00B-4C4B-9AA1-09FAC6830C0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8DD5E5A-F00B-4C4B-9AA1-09FAC6830C0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8DD5E5A-F00B-4C4B-9AA1-09FAC6830C0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8DD5E5A-F00B-4C4B-9AA1-09FAC6830C0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

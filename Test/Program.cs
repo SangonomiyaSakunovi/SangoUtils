@@ -1,38 +1,68 @@
-﻿// See https://aka.ms/new-console-template for more information
-using SangoLog;
+﻿
 
-LogTool.InitSettings();
-LogTool.LogInfo("{0} Start...", "ServerPELog");
-LogTool.ColorLog(LogColor.Blue,"这是颜色的测试");
-LogTool.LogWarn("这里输出了警告");
-LogTool.LogError("这是一个错误信息");
-LogTool.LogProcessing("这是正在运行中");
-LogTool.LogDone("这是完成信息");
-Testing testing = new Testing();
-testing.Init();
+using SangoPriorityQueue;
 
-class Testing
+Item item1 = new Item("one",10);
+Item item2 = new Item("two",7600);
+Item item3= new Item("three",130);
+Item item4 = new Item("four",660);
+
+SangoPriorityQueue<Item> que = new SangoPriorityQueue<Item>();
+que.Enqueue(item1);
+que.Enqueue(item2);
+que.Enqueue(item3);
+que.Enqueue(item4);
+
+//while (que.Count > 0)
+//{
+//    Item item = que.Dequeue();
+//    item.PrintInfo();
+//}
+
+
+Item item = que.RemoveItem(item4);
+Console.WriteLine(item);
+
+Console.WriteLine("----------------");
+
+while (que.Count > 0)
 {
-    public void Init()
-    {
-        Root root = new Root();
-        root.Init();
-    }
+    Item empitem = que.Dequeue();
+    empitem.PrintInfo();
 }
 
+Console.ReadKey();
 
-class Root
+class Item : IComparable<Item>
 {
-    public void Init()
+    public string itemName;
+    public float priority;
+
+    public int CompareTo(Item other)
     {
-        this.ColorLog(LogColor.None, "颜色测试");
-        this.ColorLog(LogColor.Cyan, "颜色测试");
-        this.ColorLog(LogColor.Magenta, "颜色测试");
-        this.ColorLog(LogColor.Green, "颜色测试");
-        this.ColorLog(LogColor.Red, "颜色测试");
-        this.ColorLog(LogColor.Yellow, "颜色测试");
-        this.ColorLog(LogColor.Blue, "颜色测试");
-        this.LogTraceInfo("测试堆栈输出");
+        if (priority < other.priority)
+        {
+            return -1;
+        }
+        else if (priority > other.priority)
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    public void PrintInfo()
+    {
+        Console.WriteLine($"item name:{itemName}   priority:{priority}");
+    }
+
+    public Item(string name, float pri)
+    {
+        itemName = name;
+        priority = pri;
     }
 }
 

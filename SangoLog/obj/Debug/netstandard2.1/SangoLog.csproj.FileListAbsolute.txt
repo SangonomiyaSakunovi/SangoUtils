@@ -1,0 +1,10 @@
+E:\FantasyOfSango\SangoUtils\SangoLog\bin\Debug\netstandard2.1\SangoLog.deps.json
+E:\FantasyOfSango\SangoUtils\SangoLog\bin\Debug\netstandard2.1\SangoLog.dll
+E:\FantasyOfSango\SangoUtils\SangoLog\bin\Debug\netstandard2.1\SangoLog.pdb
+E:\FantasyOfSango\SangoUtils\SangoLog\obj\Debug\netstandard2.1\SangoLog.csproj.AssemblyReference.cache
+E:\FantasyOfSango\SangoUtils\SangoLog\obj\Debug\netstandard2.1\SangoLog.GeneratedMSBuildEditorConfig.editorconfig
+E:\FantasyOfSango\SangoUtils\SangoLog\obj\Debug\netstandard2.1\SangoLog.AssemblyInfoInputs.cache
+E:\FantasyOfSango\SangoUtils\SangoLog\obj\Debug\netstandard2.1\SangoLog.AssemblyInfo.cs
+E:\FantasyOfSango\SangoUtils\SangoLog\obj\Debug\netstandard2.1\SangoLog.csproj.CoreCompileInputs.cache
+E:\FantasyOfSango\SangoUtils\SangoLog\obj\Debug\netstandard2.1\SangoLog.dll
+E:\FantasyOfSango\SangoUtils\SangoLog\obj\Debug\netstandard2.1\SangoLog.pdb

@@ -1,0 +1,19 @@
+[Log]# 10:20:57--735 ThreadID:1 >> ServerPELog Start...
+[Log]# 10:20:57--759 ThreadID:1 >> 这是颜色的测试
+[Warn]# 10:20:57--759 ThreadID:1 >> 这里输出了警告
+[Error]# 10:20:57--760 ThreadID:1 >> 这是一个错误信息
+[Processing]# 10:20:57--760 ThreadID:1 >> 这是正在运行中
+[Done]# 10:20:57--760 ThreadID:1 >> 这是完成信息
+[Log]# 10:20:57--761 ThreadID:1 >> 颜色测试
+[Log]# 10:20:57--761 ThreadID:1 >> 颜色测试
+[Log]# 10:20:57--761 ThreadID:1 >> 颜色测试
+[Log]# 10:20:57--761 ThreadID:1 >> 颜色测试
+[Log]# 10:20:57--762 ThreadID:1 >> 颜色测试
+[Log]# 10:20:57--762 ThreadID:1 >> 颜色测试
+[Log]# 10:20:57--762 ThreadID:1 >> 颜色测试
+[TraceInfo]# 10:20:57--762 ThreadID:1 >> 测试堆栈输出 
+StackTrace: 
+    E:\FantasyOfSango\SangoUtils\SangoLog\LogTool.cs::Void TraceInfo(System.Object, System.String, System.Object[])  line:34
+    E:\FantasyOfSango\SangoUtils\Test\Program.cs::Void Init()  line:35
+    E:\FantasyOfSango\SangoUtils\Test\Program.cs::Void Init()  line:19
+    E:\FantasyOfSango\SangoUtils\Test\Program.cs::Void <Main>$(System.String[])  line:12

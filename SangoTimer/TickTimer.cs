@@ -8,26 +8,26 @@ namespace SangoTimer
 {
     public class TickTimer : BaseTimer
     {
-        private readonly DateTime InitDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0);
-        private readonly ConcurrentDictionary<int, TickTask> TickTaskDict;
-        private readonly ConcurrentQueue<TickTaskPack> TickTaskPackQueue;
-        private readonly bool isSetHandleThread;
+        private readonly DateTime _initDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+        private readonly ConcurrentDictionary<int, TickTask> _tickTaskDict;
+        private readonly ConcurrentQueue<TickTaskPack> _tickTaskPackQueue;
+        private readonly bool _isSetHandleThread;
 
-        private const string TaskIdLock = "TickTimer_TaskIdLock";
+        private const string _taskIdLock = "TickTimer_TaskIdLock";
 
-        private readonly Thread timerThread;
+        private readonly Thread _timerThread;
 
         public TickTimer(int interval = 0, bool isSetHandleThreads = true)
         {
-            TickTaskDict = new ConcurrentDictionary<int, TickTask>();
-            isSetHandleThread = isSetHandleThreads;
-            if (isSetHandleThread)
+            _tickTaskDict = new ConcurrentDictionary<int, TickTask>();
+            _isSetHandleThread = isSetHandleThreads;
+            if (_isSetHandleThread)
             {
-                TickTaskPackQueue = new ConcurrentQueue<TickTaskPack>();
+                _tickTaskPackQueue = new ConcurrentQueue<TickTaskPack>();
             }
             if (interval != 0)
             {
-                timerThread = new Thread(new ThreadStart(() =>
+                _timerThread = new Thread(new ThreadStart(() =>
                 {
                     try
                     {
@@ -42,7 +42,7 @@ namespace SangoTimer
                         LogWarnCallBack?.Invoke($"Tick Thread Abort: {ex}.");
                     }
                 }));
-                timerThread.Start();
+                _timerThread.Start();
             }
         }
 
@@ -53,7 +53,7 @@ namespace SangoTimer
             double destinationTime = startTime + delayTime;
             TickTask tickTask = new TickTask(taskId, delayTime, count, startTime, destinationTime, taskCallBack, cancelCallBack);
 
-            if (TickTaskDict.TryAdd(taskId, tickTask))
+            if (_tickTaskDict.TryAdd(taskId, tickTask))
             {
                 return taskId;
             }
@@ -66,11 +66,11 @@ namespace SangoTimer
 
         public override bool DeleteTask(int taskId)
         {
-            if (TickTaskDict.TryRemove(taskId, out TickTask tickTask))
+            if (_tickTaskDict.TryRemove(taskId, out TickTask tickTask))
             {
-                if (isSetHandleThread && tickTask.CancelCallBack != null)
+                if (_isSetHandleThread && tickTask.CancelCallBack != null)
                 {
-                    TickTaskPackQueue.Enqueue(new TickTaskPack(taskId, tickTask.CancelCallBack));
+                    _tickTaskPackQueue.Enqueue(new TickTaskPack(taskId, tickTask.CancelCallBack));
                 }
                 else
                 {
@@ -87,21 +87,21 @@ namespace SangoTimer
 
         public override void Reset()
         {
-            if (!TickTaskPackQueue.IsEmpty)
+            if (!_tickTaskPackQueue.IsEmpty)
             {
                 LogWarnCallBack?.Invoke("TickTaskPackQueue is not empty.");
             }
-            TickTaskDict.Clear();
+            _tickTaskDict.Clear();
             _taskId = 0;
-            if (timerThread != null)
+            if (_timerThread != null)
             {
-                timerThread.Abort();
+                _timerThread.Abort();
             }
         }
 
         protected override int GenerateTaskId()
         {
-            lock (TaskIdLock)
+            lock (_taskIdLock)
             {
                 while (true)
                 {
@@ -110,7 +110,7 @@ namespace SangoTimer
                     {
                         _taskId = 0;
                     }
-                    if (!TickTaskDict.ContainsKey(_taskId))
+                    if (!_tickTaskDict.ContainsKey(_taskId))
                     {
                         return _taskId;
                     }
@@ -121,7 +121,7 @@ namespace SangoTimer
         public void UpdateTask()
         {
             double currentTime = GetUTCMilliseconds();
-            foreach (var item in TickTaskDict)
+            foreach (var item in _tickTaskDict)
             {
                 TickTask tickTask = item.Value;
                 if (currentTime < tickTask.DestinationTime) { continue; }
@@ -149,9 +149,9 @@ namespace SangoTimer
 
         public void HandleTask()
         {
-            while(TickTaskPackQueue != null && TickTaskPackQueue.Count > 0)
+            while(_tickTaskPackQueue != null && _tickTaskPackQueue.Count > 0)
             {
-                if (TickTaskPackQueue.TryDequeue(out TickTaskPack tickTaskPack))
+                if (_tickTaskPackQueue.TryDequeue(out TickTaskPack tickTaskPack))
                 {
                     tickTaskPack.ProxyCallBack(tickTaskPack.TaskId);
                 }
@@ -164,9 +164,9 @@ namespace SangoTimer
 
         private void CallTaskCallBack(int taskId, Action<int> taskCallBack)
         {
-            if (isSetHandleThread && taskCallBack != null)
+            if (_isSetHandleThread && taskCallBack != null)
             {
-                TickTaskPackQueue.Enqueue(new TickTaskPack(taskId, taskCallBack));
+                _tickTaskPackQueue.Enqueue(new TickTaskPack(taskId, taskCallBack));
             }
             else
             {
@@ -176,7 +176,7 @@ namespace SangoTimer
 
         private void DoneTask(int taskId)
         {
-            if (TickTaskDict.TryRemove(taskId, out TickTask tickTask))
+            if (_tickTaskDict.TryRemove(taskId, out TickTask tickTask))
             {
                 CallTaskCallBack(taskId, tickTask.TaskCallBack);
                 tickTask.TaskCallBack = null;
@@ -189,7 +189,7 @@ namespace SangoTimer
 
         private double GetUTCMilliseconds()
         {
-            TimeSpan timeSpan = DateTime.UtcNow - InitDateTime;
+            TimeSpan timeSpan = DateTime.UtcNow - _initDateTime;
             return timeSpan.TotalMilliseconds;
         }
 

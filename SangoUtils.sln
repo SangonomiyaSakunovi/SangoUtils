@@ -7,11 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SangoLog", "SangoLog\SangoL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App", "Test\App.csproj", "{6E8E541F-5685-4ECE-A96D-2BCFDBC259AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SangoTimer", "SangoTimer\SangoTimer.csproj", "{12C4A6BE-5BCB-484A-8CF8-91FF957DC288}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SangoTimer", "SangoTimer\SangoTimer.csproj", "{12C4A6BE-5BCB-484A-8CF8-91FF957DC288}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SangoIOCPNet", "SangoIOCPNet\SangoIOCPNet.csproj", "{EA88BDEA-C111-4529-9518-15E3C7E3A2D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SangoIOCPNet", "SangoIOCPNet\SangoIOCPNet.csproj", "{EA88BDEA-C111-4529-9518-15E3C7E3A2D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SangoPriorityQueue", "SangoPriorityQueue\SangoPriorityQueue.csproj", "{F8DD5E5A-F00B-4C4B-9AA1-09FAC6830C0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SangoPriorityQueue", "SangoPriorityQueue\SangoPriorityQueue.csproj", "{F8DD5E5A-F00B-4C4B-9AA1-09FAC6830C0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SangoKCPNet", "SangoKCPNet\SangoKCPNet.csproj", "{358BBA07-6FBA-43C1-8628-5B457E5D829E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{F8DD5E5A-F00B-4C4B-9AA1-09FAC6830C0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8DD5E5A-F00B-4C4B-9AA1-09FAC6830C0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8DD5E5A-F00B-4C4B-9AA1-09FAC6830C0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{358BBA07-6FBA-43C1-8628-5B457E5D829E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{358BBA07-6FBA-43C1-8628-5B457E5D829E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{358BBA07-6FBA-43C1-8628-5B457E5D829E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{358BBA07-6FBA-43C1-8628-5B457E5D829E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -13,7 +13,6 @@ namespace SangoIOCPNet
         public static Action<string> LogProcessingCallBack;
         public static Action<string> LogDoneCallBack;
 
-
         public static void Info(string message, params object[] arguments)
         {
             message = string.Format(message, arguments);
@@ -24,6 +23,19 @@ namespace SangoIOCPNet
             else
             {
                 ConsoleLog(message, IOCPLogColor.None);
+            }
+        }
+
+        public static void Start(string message, params object[] arguments)
+        {
+            message = string.Format(message, arguments);
+            if (LogInfoCallBack != null)
+            {
+                LogInfoCallBack(message);
+            }
+            else
+            {
+                ConsoleLog(message, IOCPLogColor.Blue);
             }
         }
 
@@ -89,12 +101,12 @@ namespace SangoIOCPNet
                     Console.WriteLine(message);
                     break;
                 case IOCPLogColor.Yellow:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
                     Console.WriteLine(message);
                     Console.ForegroundColor = ConsoleColor.Gray;
                     break;
                 case IOCPLogColor.Red:
-                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine(message);
                     Console.ForegroundColor = ConsoleColor.Gray;
                     break;

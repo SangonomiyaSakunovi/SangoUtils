@@ -9,19 +9,19 @@ namespace SangoTimer
 {
     public class ASyncTimer : BaseTimer
     {
-        private readonly ConcurrentDictionary<int, ASyncTask> ASyncTaskDict;
-        private readonly ConcurrentQueue<ASyncTaskPack> ASyncTaskPackQueue;
-        private readonly bool isSetHandleThread;
+        private readonly ConcurrentDictionary<int, ASyncTask> _asyncTaskDict;
+        private readonly ConcurrentQueue<ASyncTaskPack> _asyncTaskPackQueue;
+        private readonly bool _isSetHandleThread;
 
-        private const string TaskIdLock = "ASyncTimer_TaskIdLock";
+        private const string _taskIdLock = "ASyncTimer_TaskIdLock";
 
         public ASyncTimer(bool isSetHandleThreads)
         {
-            isSetHandleThread = isSetHandleThreads;
-            ASyncTaskDict = new ConcurrentDictionary<int, ASyncTask>();
-            if (isSetHandleThread)
+            _isSetHandleThread = isSetHandleThreads;
+            _asyncTaskDict = new ConcurrentDictionary<int, ASyncTask>();
+            if (_isSetHandleThread)
             {
-                ASyncTaskPackQueue = new ConcurrentQueue<ASyncTaskPack>();
+                _asyncTaskPackQueue = new ConcurrentQueue<ASyncTaskPack>();
             }
         }
 
@@ -31,7 +31,7 @@ namespace SangoTimer
             ASyncTask asyncTask = new ASyncTask(taskId, delayTime, count, taskCallBack, cancelCallBack);
             RunTaskInThreadPool(asyncTask);
 
-            if (ASyncTaskDict.TryAdd(taskId, asyncTask))
+            if (_asyncTaskDict.TryAdd(taskId, asyncTask))
             {
                 return taskId;
             }
@@ -44,13 +44,13 @@ namespace SangoTimer
 
         public override bool DeleteTask(int taskId)
         {
-            if (ASyncTaskDict.TryRemove(taskId,out ASyncTask asyncTask))
+            if (_asyncTaskDict.TryRemove(taskId,out ASyncTask asyncTask))
             {
                 LogInfoCallBack?.Invoke($"Remove taskId: {asyncTask.TaskId} task in ASyncTaskDict success.");
                 asyncTask.CancellationTokenSource.Cancel();
-                if (isSetHandleThread && asyncTask.CancelCallBack != null)
+                if (_isSetHandleThread && asyncTask.CancelCallBack != null)
                 {
-                    ASyncTaskPackQueue.Enqueue(new ASyncTaskPack(asyncTask.TaskId, asyncTask.CancelCallBack));
+                    _asyncTaskPackQueue.Enqueue(new ASyncTaskPack(asyncTask.TaskId, asyncTask.CancelCallBack));
                 }
                 else
                 {
@@ -67,17 +67,17 @@ namespace SangoTimer
 
         public override void Reset()
         {
-            if (ASyncTaskPackQueue !=null && !ASyncTaskPackQueue.IsEmpty)
+            if (_asyncTaskPackQueue !=null && !_asyncTaskPackQueue.IsEmpty)
             {
                 LogWarnCallBack?.Invoke("ASyncTaskPackQueue is not empty.");
             }
-            ASyncTaskDict.Clear();
+            _asyncTaskDict.Clear();
             _taskId = 0;
         }
 
         protected override int GenerateTaskId()
         {
-            lock (TaskIdLock)
+            lock (_taskIdLock)
             {
                 while (true)
                 {
@@ -86,7 +86,7 @@ namespace SangoTimer
                     {
                         _taskId = 0;
                     }
-                    if (!ASyncTaskDict.ContainsKey(_taskId))
+                    if (!_asyncTaskDict.ContainsKey(_taskId))
                     {
                         return _taskId;
                     }
@@ -96,9 +96,9 @@ namespace SangoTimer
 
         public void HandleTask()
         {
-            while(ASyncTaskPackQueue != null && ASyncTaskPackQueue.Count > 0)
+            while(_asyncTaskPackQueue != null && _asyncTaskPackQueue.Count > 0)
             {
-                if (ASyncTaskPackQueue.TryDequeue(out ASyncTaskPack asyncTaskPack))
+                if (_asyncTaskPackQueue.TryDequeue(out ASyncTaskPack asyncTaskPack))
                 {
                     asyncTaskPack.ProxyCallBack(asyncTaskPack.TaskId);
                 }
@@ -149,9 +149,9 @@ namespace SangoTimer
 
         private void CallTaskCallBack(ASyncTask asyncTask)
         {
-            if (isSetHandleThread && asyncTask.TaskCallBack != null)
+            if (_isSetHandleThread && asyncTask.TaskCallBack != null)
             {
-                ASyncTaskPackQueue.Enqueue(new ASyncTaskPack(asyncTask.TaskId, asyncTask.TaskCallBack));
+                _asyncTaskPackQueue.Enqueue(new ASyncTaskPack(asyncTask.TaskId, asyncTask.TaskCallBack));
             }
             else
             {
@@ -159,7 +159,7 @@ namespace SangoTimer
             }
             if (asyncTask.Count == 0)
             {
-                if (ASyncTaskDict.TryRemove(asyncTask.TaskId,out ASyncTask tempTask))
+                if (_asyncTaskDict.TryRemove(asyncTask.TaskId,out ASyncTask tempTask))
                 {
                     LogInfoCallBack?.Invoke($"TaskId: {asyncTask.TaskId} has Run to Done.");
                 }

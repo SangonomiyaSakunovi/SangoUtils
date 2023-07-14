@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SangoIOCPNet", "SangoIOCPNe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SangoPriorityQueue", "SangoPriorityQueue\SangoPriorityQueue.csproj", "{F8DD5E5A-F00B-4C4B-9AA1-09FAC6830C0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SangoKCPNet", "SangoKCPNet\SangoKCPNet.csproj", "{358BBA07-6FBA-43C1-8628-5B457E5D829E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SangoKCPNet", "SangoKCPNet\SangoKCPNet.csproj", "{358BBA07-6FBA-43C1-8628-5B457E5D829E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

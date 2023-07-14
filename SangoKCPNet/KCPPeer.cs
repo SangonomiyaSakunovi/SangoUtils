@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
 
 //Developer: SangonomiyaSakunovi
+//If the message buffer(0) is 0, we define that`s a new client, the Server will give it a PeerId
+//If the message head is [0,0,0,0], we define the message is PeerId
 
 namespace SangoKCPNet
 {
@@ -22,6 +25,87 @@ namespace SangoKCPNet
             _cancellationToken = _cancellationTokenSource.Token;
         }
 
+        #region Server
+        private Dictionary<uint, T> _peerDict;
+
+        public void StartAsServer(string ipAddress, int port)
+        {
+            KCPLog.Start("Start as Server.");
+            _peerDict = new Dictionary<uint, T>();
+            _udpClient = new UdpClient(new IPEndPoint(IPAddress.Parse(ipAddress), port));
+            _remotePoint = new IPEndPoint(IPAddress.Parse(ipAddress), port);
+
+            Task.Run(ServerReceive, _cancellationToken);
+        }
+
+        private async void ServerReceive()
+        {
+            UdpReceiveResult result;
+            while (true)
+            {
+                try
+                {
+                    if (_cancellationToken.IsCancellationRequested)
+                    {
+                        KCPLog.Done("Server Recieve Task is Cancelled.");
+                        break;
+                    }
+                    result = await _udpClient.ReceiveAsync();
+
+                    uint peerId = BitConverter.ToUInt32(result.Buffer, 0);
+                    if (peerId == 0)
+                    {
+                        peerId = GeneratePeerId();
+                        byte[] peerId_bytes = BitConverter.GetBytes(peerId);
+                        byte[] peerId_message = new byte[8];
+                        Array.Copy(peerId_bytes, 0, peerId_message, 4, 4);
+
+                        SendUdpMessage(peerId_message, result.RemoteEndPoint);
+                    }
+                    else
+                    {
+                        if (!_peerDict.TryGetValue(peerId, out T currentPeer))
+                        {
+                            KCPLog.Special("New Client Peer Connect, peerId: {0}", peerId);
+                            currentPeer = new T();
+                            currentPeer.InitClientPeer(peerId, SendUdpMessage, result.RemoteEndPoint);
+                            currentPeer.OnClientPeerCloseCallBack = OnClientPeerCloseInServer;
+                            lock (_peerDict)
+                            {
+                                _peerDict.Add(peerId, currentPeer);
+                            }
+                        }
+                        else
+                        {
+                            currentPeer = _peerDict[peerId];
+                        }
+                        currentPeer.RecieveData(result.Buffer);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    KCPLog.Warning("Server Udp Recieve Data Exception:{0}", ex.ToString());
+                }
+            }
+        }
+
+        private void OnClientPeerCloseInServer(uint peerId)
+        {
+            if (_peerDict.ContainsKey(peerId))
+            {
+                lock (_peerDict)
+                {
+                    _peerDict.Remove(peerId);
+                    KCPLog.Special("Client Peer Close, peerId: {0}", peerId);
+                }
+            }
+            else
+            {
+                KCPLog.Error("PeerId: {0}, cannot find in PeerDict.", peerId);
+            }
+        }
+        #endregion
+
         #region Client
         public T ClientPeer;
 
@@ -31,16 +115,37 @@ namespace SangoKCPNet
             _udpClient = new UdpClient(0);
             _remotePoint = new IPEndPoint(IPAddress.Parse(ipAddress), port);
 
-            Task.Run(ClientRecieve, _cancellationToken);
+            Task.Run(ClientReceive, _cancellationToken);
         }
 
-        //If the  message is [0,0,0,0], we define that`s a new client, the Server will give it a PeerId
-        public void ConnectServer()
+
+        public Task<bool> ConnectServer(int heartBeatInterval, int maxInterval = 5000)
         {
             SendUdpMessage(new byte[4], _remotePoint);
+            int sumHeartBeatTime = 0;
+            Task<bool> heartBeatTask = Task.Run(async () =>
+            {
+                while (true)
+                {
+                    await Task.Delay(heartBeatInterval);
+                    sumHeartBeatTime += heartBeatInterval;
+                    if (ClientPeer != null && ClientPeer.IsConnected())
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        if (sumHeartBeatTime > maxInterval)
+                        {
+                            return false;
+                        }
+                    }
+                }
+            });
+            return heartBeatTask;
         }
 
-        private async void ClientRecieve()
+        private async void ClientReceive()
         {
             UdpReceiveResult result;
             while (true)
@@ -57,21 +162,20 @@ namespace SangoKCPNet
                     if (Equals(_remotePoint, result.RemoteEndPoint))
                     {
                         uint peerId = BitConverter.ToUInt32(result.Buffer, 0);
-                        if (peerId == 0)    //First connect
+                        if (peerId == 0)
                         {
                             if (ClientPeer != null && ClientPeer.IsConnected())
                             {
-                                //Already connected, that`s surplus info
                                 KCPLog.Info("Client is Init Done, abandon the surplus info.");
                             }
                             else
                             {
                                 peerId = BitConverter.ToUInt32(result.Buffer, 4);
-                                KCPLog.Done("Udp Request peerId:{0}", peerId);
+                                KCPLog.Special("Connect to Server, Udp Request peerId:{0}", peerId);
 
                                 ClientPeer = new T();
                                 ClientPeer.InitClientPeer(peerId, SendUdpMessage, _remotePoint);
-                                ClientPeer.OnClientPeerCloseCallBack = OnClientPeerClose;
+                                ClientPeer.OnClientPeerCloseCallBack = OnClientPeerCloseInClient;
                             }
                         }
                         else
@@ -98,7 +202,7 @@ namespace SangoKCPNet
             }
         }
 
-        private void OnClientPeerClose(uint peerId)
+        private void OnClientPeerCloseInClient(uint peerId)
         {
             _cancellationTokenSource.Cancel();
             if (_udpClient != null)
@@ -106,7 +210,7 @@ namespace SangoKCPNet
                 _udpClient.Close();
                 _udpClient = null;
             }
-            KCPLog.Done("Client Peer Close, peerId: {0}", peerId);
+            KCPLog.Special("Client Peer Close, peerId: {0}", peerId);
         }
 
         public void CloseClient()
@@ -124,6 +228,28 @@ namespace SangoKCPNet
             {
                 _udpClient.SendAsync(bytes, bytes.Length, remotePoint);
             }
+        }
+
+        private uint _freePeerId = 0;
+
+        private uint GeneratePeerId()
+        {
+            lock (_peerDict)
+            {
+                while (true)
+                {
+                    ++_freePeerId;
+                    if (_freePeerId == uint.MaxValue)
+                    {
+                        _freePeerId = 1;
+                    }
+                    if (!_peerDict.ContainsKey(_freePeerId))
+                    {
+                        break;
+                    }
+                }
+            }
+            return _freePeerId;
         }
     }
 }

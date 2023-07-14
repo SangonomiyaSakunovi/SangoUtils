@@ -10,8 +10,6 @@ namespace SangoKCPNet
         public static Action<string> LogInfoCallBack;
         public static Action<string> LogErrorCallBack;
         public static Action<string> LogWarningCallBack;
-        public static Action<string> LogProcessingCallBack;
-        public static Action<string> LogDoneCallBack;
 
         public static void Info(string message, params object[] arguments)
         {
@@ -39,12 +37,25 @@ namespace SangoKCPNet
             }
         }
 
+        public static void Special(string message, params object[] arguments)
+        {
+            message = string.Format(message, arguments);
+            if (LogInfoCallBack != null)
+            {
+                LogInfoCallBack(message);
+            }
+            else
+            {
+                ConsoleLog(message, KCPLogColor.Magenta);
+            }
+        }
+
         public static void Done(string message, params object[] arguments)
         {
             message = string.Format(message, arguments);
-            if (LogDoneCallBack != null)
+            if (LogInfoCallBack != null)
             {
-                LogDoneCallBack(message);
+                LogInfoCallBack(message);
             }
             else
             {
@@ -55,9 +66,9 @@ namespace SangoKCPNet
         public static void Processing(string message, params object[] arguments)
         {
             message = string.Format(message, arguments);
-            if (LogProcessingCallBack != null)
+            if (LogInfoCallBack != null)
             {
-                LogProcessingCallBack(message);
+                LogInfoCallBack(message);
             }
             else
             {

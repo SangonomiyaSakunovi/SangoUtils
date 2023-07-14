@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.Data;
+using System.IO;
 using System.IO.Compression;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -9,6 +11,13 @@ namespace SangoKCPNet
 {
     public static class KCPTool
     {
+        public static readonly DateTimeOffset UTCStartTime = DateTime.SpecifyKind(new DateTime(1970, 1, 1), DateTimeKind.Utc);
+        public static ulong GetUTCStartMillseconds()
+        {
+            TimeSpan timeSpan = DateTimeOffset.UtcNow - UTCStartTime;
+            return (ulong)timeSpan.TotalMilliseconds;
+        }
+
         public static byte[] Compress(byte[] input)
         {
             using (MemoryStream outMs = new MemoryStream())

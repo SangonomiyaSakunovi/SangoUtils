@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -11,8 +12,7 @@ using System.Threading.Tasks;
 
 namespace SangoKCPNet
 {
-    public class KCPPeer<T, K> where T : IClientPeer<K>, new()
-                              where K : KCPMessage, new()
+    public class KCPPeer<T> where T : IClientPeer, new()
     {
         private UdpClient _udpClient;
         private IPEndPoint _remotePoint;
@@ -33,6 +33,11 @@ namespace SangoKCPNet
             KCPLog.Start("Start as Server.");
             _peerDict = new Dictionary<uint, T>();
             _udpClient = new UdpClient(new IPEndPoint(IPAddress.Parse(ipAddress), port));
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                //In windowsPlatForm, when you force to close a udp, will be a Warning: 10054
+                _udpClient.Client.IOControl((IOControlCode)(-1744830452), new byte[] { 0, 0, 0, 0 }, null);
+            }
             _remotePoint = new IPEndPoint(IPAddress.Parse(ipAddress), port);
 
             Task.Run(ServerReceive, _cancellationToken);
@@ -104,6 +109,21 @@ namespace SangoKCPNet
                 KCPLog.Error("PeerId: {0}, cannot find in PeerDict.", peerId);
             }
         }
+
+        public void CloseServer()
+        {
+            foreach (var item in _peerDict)
+            {
+                item.Value.CloseClientPeer();
+            }
+            _peerDict = null;
+            if (_udpClient != null)
+            {
+                _udpClient.Close();
+                _udpClient = null;
+                _cancellationTokenSource.Cancel();
+            }
+        }
         #endregion
 
         #region Client
@@ -113,6 +133,11 @@ namespace SangoKCPNet
         {
             KCPLog.Start("Start as Client.");
             _udpClient = new UdpClient(0);
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                //In windowsPlatForm, when you force to close a udp, will be a Warning: 10054
+                _udpClient.Client.IOControl((IOControlCode)(-1744830452), new byte[] { 0, 0, 0, 0 }, null);
+            }
             _remotePoint = new IPEndPoint(IPAddress.Parse(ipAddress), port);
 
             Task.Run(ClientReceive, _cancellationToken);
@@ -221,6 +246,14 @@ namespace SangoKCPNet
             }
         }
         #endregion
+
+        public void BroadCastMessage(byte[] bytes)
+        {
+            foreach (var item in _peerDict)
+            {
+                item.Value.SendMessage(bytes);
+            }
+        }
 
         private void SendUdpMessage(byte[] bytes, IPEndPoint remotePoint)
         {

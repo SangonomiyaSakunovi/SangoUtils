@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SangoKCPNet
 {
-    public abstract class IClientPeer<T> where T : KCPMessage, new()
+    public abstract class IClientPeer
     {
         protected uint _peerId;
         private Action<byte[], IPEndPoint> _udpSender;
@@ -17,7 +17,7 @@ namespace SangoKCPNet
 
         public Action<uint> OnClientPeerCloseCallBack;
 
-        public KCPHandle _handle;
+        public KCPHandler _handle;
         public Kcp _kcp;
 
         private CancellationTokenSource _cancellationTokenSource;
@@ -31,7 +31,7 @@ namespace SangoKCPNet
             _remotePoint = remotePoint;
             _connectionState = ConnectionStateCode.Connected;
 
-            _handle = new KCPHandle();
+            _handle = new KCPHandler();
             _kcp = new Kcp(sessionId, _handle);
             _kcp.NoDelay(1, 10, 2, 1);
             _kcp.WndSize(64, 64);
@@ -42,16 +42,6 @@ namespace SangoKCPNet
                 byte[] bytes = buffer.ToArray();
                 _udpSender(bytes, remotePoint);
             };
-
-            //_handle.Recv = (byte[] buffer) =>
-            //{
-            //    buffer = KCPTool.DeCompress(buffer);
-            //    T message = KCPTool.DeSerialize<T>(buffer);
-            //    if (message != null)
-            //    {
-            //        OnReceivedMessage(message);
-            //    }
-            //};
 
             _handle.Recv = (byte[] buffer) =>
             {
@@ -73,7 +63,6 @@ namespace SangoKCPNet
         protected abstract void OnDisconnected();
 
         protected abstract void OnReceivedMessage(byte[] byteMessages);
-        protected abstract void OnReceivedMessage(T messages);
 
         public void RecieveData(byte[] buffer)
         {
@@ -113,23 +102,7 @@ namespace SangoKCPNet
             {
                 KCPLog.Warning("ClientPeer Update Exception:{0}", ex.ToString());
             }
-        }
-
-        //public void SendMessage(T message)
-        //{
-        //    if (IsConnected())
-        //    {
-        //        byte[] bytes = KCPTool.Serialize(message);
-        //        if (bytes != null)
-        //        {
-        //            SendMessage(bytes);
-        //        }
-        //    }
-        //    else
-        //    {
-        //        KCPLog.Warning("ClientPeer is Disconnected, peerId is:{0}", _peerId);
-        //    }
-        //}
+        }      
 
         public void SendMessage(byte[] bytes)
         {
@@ -164,9 +137,9 @@ namespace SangoKCPNet
 
         public override bool Equals(object obj)
         {
-            if (obj is IClientPeer<T>)
+            if (obj is IClientPeer)
             {
-                IClientPeer<T> objClient = obj as IClientPeer<T>;
+                IClientPeer objClient = obj as IClientPeer;
                 return _peerId == objClient._peerId;
             }
             else
@@ -189,11 +162,5 @@ namespace SangoKCPNet
         {
             return _connectionState == ConnectionStateCode.Connected;
         }
-    }
-
-    [Serializable]
-    public abstract class KCPMessage
-    {
-
     }
 }

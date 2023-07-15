@@ -6,7 +6,7 @@ using System.Net.Sockets.Kcp;
 
 namespace SangoKCPNet
 {
-    public class KCPHandle : IKcpCallback
+    public class KCPHandler : IKcpCallback
     {
         public Action<Memory<byte>> Out;
 

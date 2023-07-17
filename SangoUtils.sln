@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SangoPriorityQueue", "Sango
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SangoKCPNet", "SangoKCPNet\SangoKCPNet.csproj", "{358BBA07-6FBA-43C1-8628-5B457E5D829E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SangoNetFSM", "SangoNetFSM\SangoNetFSM.csproj", "{007F1029-41E0-435D-841D-19D6E4973EFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{358BBA07-6FBA-43C1-8628-5B457E5D829E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{358BBA07-6FBA-43C1-8628-5B457E5D829E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{358BBA07-6FBA-43C1-8628-5B457E5D829E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{007F1029-41E0-435D-841D-19D6E4973EFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{007F1029-41E0-435D-841D-19D6E4973EFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{007F1029-41E0-435D-841D-19D6E4973EFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{007F1029-41E0-435D-841D-19D6E4973EFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

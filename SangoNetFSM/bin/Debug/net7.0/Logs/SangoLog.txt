@@ -1,0 +1,8 @@
+[LogDone]# 09:55:31--212 ThreadID:1 >> TestStater: None has switched to Connecting
+[LogDone]# 09:55:48--004 ThreadID:1 >> TestStater: Connecting has switched to Validating
+[LogDone]# 09:55:56--876 ThreadID:1 >> TestStater: Validating has switched to Connected
+[LogDone]# 09:56:00--340 ThreadID:1 >> TestStater: Connected has switched to Connected
+[LogDone]# 09:56:15--388 ThreadID:1 >> TestStater: Connected has switched to DisConnected
+[LogDone]# 09:57:03--936 ThreadID:1 >> TestStater: DisConnected has switched to Connecting
+[LogDone]# 09:57:07--267 ThreadID:1 >> TestStater: Connecting has switched to Validating
+[LogDone]# 09:57:09--299 ThreadID:1 >> TestStater: Validating has switched to DisConnected

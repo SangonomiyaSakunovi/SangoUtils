@@ -1,0 +1,42 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.1/",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.1": {},
+    ".NETStandard,Version=v2.1/": {
+      "SangoKCPNet/1.0.0": {
+        "dependencies": {
+          "Kcp": "2.5.2"
+        },
+        "runtime": {
+          "SangoKCPNet.dll": {}
+        }
+      },
+      "Kcp/2.5.2": {
+        "runtime": {
+          "lib/netstandard2.1/Kcp.dll": {
+            "assemblyVersion": "2.5.2.0",
+            "fileVersion": "2.5.2.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SangoKCPNet/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Kcp/2.5.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-f+/PFoHTW3hj0gYuY0jXtGY/b9NpTw9tqwrwoaMd8wSiA+VlZffDd5mEl+tM8YJDOjW12XN1sZVqLMfTEmDiEw==",
+      "path": "kcp/2.5.2",
+      "hashPath": "kcp.2.5.2.nupkg.sha512"
+    }
+  }
+}

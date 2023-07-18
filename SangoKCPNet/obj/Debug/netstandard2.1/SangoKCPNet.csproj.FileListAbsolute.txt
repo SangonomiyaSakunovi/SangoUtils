@@ -1,0 +1,10 @@
+E:\FantasyOfSango\SangoUtils\SangoKCPNet\bin\Debug\netstandard2.1\SangoKCPNet.deps.json
+E:\FantasyOfSango\SangoUtils\SangoKCPNet\bin\Debug\netstandard2.1\SangoKCPNet.dll
+E:\FantasyOfSango\SangoUtils\SangoKCPNet\bin\Debug\netstandard2.1\SangoKCPNet.pdb
+E:\FantasyOfSango\SangoUtils\SangoKCPNet\obj\Debug\netstandard2.1\SangoKCPNet.csproj.AssemblyReference.cache
+E:\FantasyOfSango\SangoUtils\SangoKCPNet\obj\Debug\netstandard2.1\SangoKCPNet.GeneratedMSBuildEditorConfig.editorconfig
+E:\FantasyOfSango\SangoUtils\SangoKCPNet\obj\Debug\netstandard2.1\SangoKCPNet.AssemblyInfoInputs.cache
+E:\FantasyOfSango\SangoUtils\SangoKCPNet\obj\Debug\netstandard2.1\SangoKCPNet.AssemblyInfo.cs
+E:\FantasyOfSango\SangoUtils\SangoKCPNet\obj\Debug\netstandard2.1\SangoKCPNet.csproj.CoreCompileInputs.cache
+E:\FantasyOfSango\SangoUtils\SangoKCPNet\obj\Debug\netstandard2.1\SangoKCPNet.dll
+E:\FantasyOfSango\SangoUtils\SangoKCPNet\obj\Debug\netstandard2.1\SangoKCPNet.pdb

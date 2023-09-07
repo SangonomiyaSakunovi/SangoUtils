@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1001,
+    "resId": "123",
+    "score": null,
+    "enumExample": 0,
+    "child": null
+  },
+  {
+    "id": 1002,
+    "resId": "xyz",
+    "score": 1.1,
+    "enumExample": 1,
+    "child": "1|2|3"
+  },
+  {
+    "id": 1003,
+    "resId": "1x2y3z",
+    "score": 2,
+    "enumExample": 2,
+    "child": "4|"
+  }
+]

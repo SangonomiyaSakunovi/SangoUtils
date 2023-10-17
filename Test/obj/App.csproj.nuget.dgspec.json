@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\FantasyOfSango\\SangoUtils\\Test\\App.csproj": {}
+    "I:\\SangoUtils\\SangoUtils\\Test\\App.csproj": {}
   },
   "projects": {
-    "E:\\FantasyOfSango\\SangoUtils\\SangoIOCPNet\\SangoIOCPNet.csproj": {
+    "I:\\SangoUtils\\SangoUtils\\SangoIOCPNet\\SangoIOCPNet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\FantasyOfSango\\SangoUtils\\SangoIOCPNet\\SangoIOCPNet.csproj",
+        "projectUniqueName": "I:\\SangoUtils\\SangoUtils\\SangoIOCPNet\\SangoIOCPNet.csproj",
         "projectName": "SangoIOCPNet",
-        "projectPath": "E:\\FantasyOfSango\\SangoUtils\\SangoIOCPNet\\SangoIOCPNet.csproj",
-        "packagesPath": "C:\\Users\\16022\\.nuget\\packages\\",
-        "outputPath": "E:\\FantasyOfSango\\SangoUtils\\SangoIOCPNet\\obj\\",
+        "projectPath": "I:\\SangoUtils\\SangoUtils\\SangoIOCPNet\\SangoIOCPNet.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "I:\\SangoUtils\\SangoUtils\\SangoIOCPNet\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\16022\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -60,24 +60,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\FantasyOfSango\\SangoUtils\\SangoLog\\SangoLog.csproj": {
+    "I:\\SangoUtils\\SangoUtils\\SangoLog\\SangoLog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\FantasyOfSango\\SangoUtils\\SangoLog\\SangoLog.csproj",
+        "projectUniqueName": "I:\\SangoUtils\\SangoUtils\\SangoLog\\SangoLog.csproj",
         "projectName": "SangoLog",
-        "projectPath": "E:\\FantasyOfSango\\SangoUtils\\SangoLog\\SangoLog.csproj",
-        "packagesPath": "C:\\Users\\16022\\.nuget\\packages\\",
-        "outputPath": "E:\\FantasyOfSango\\SangoUtils\\SangoLog\\obj\\",
+        "projectPath": "I:\\SangoUtils\\SangoUtils\\SangoLog\\SangoLog.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "I:\\SangoUtils\\SangoUtils\\SangoLog\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\16022\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -120,24 +120,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\FantasyOfSango\\SangoUtils\\SangoPriorityQueue\\SangoPriorityQueue.csproj": {
+    "I:\\SangoUtils\\SangoUtils\\SangoPriorityQueue\\SangoPriorityQueue.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\FantasyOfSango\\SangoUtils\\SangoPriorityQueue\\SangoPriorityQueue.csproj",
+        "projectUniqueName": "I:\\SangoUtils\\SangoUtils\\SangoPriorityQueue\\SangoPriorityQueue.csproj",
         "projectName": "SangoPriorityQueue",
-        "projectPath": "E:\\FantasyOfSango\\SangoUtils\\SangoPriorityQueue\\SangoPriorityQueue.csproj",
-        "packagesPath": "C:\\Users\\16022\\.nuget\\packages\\",
-        "outputPath": "E:\\FantasyOfSango\\SangoUtils\\SangoPriorityQueue\\obj\\",
+        "projectPath": "I:\\SangoUtils\\SangoUtils\\SangoPriorityQueue\\SangoPriorityQueue.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "I:\\SangoUtils\\SangoUtils\\SangoPriorityQueue\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\16022\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -180,24 +180,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\FantasyOfSango\\SangoUtils\\SangoTimer\\SangoTimer.csproj": {
+    "I:\\SangoUtils\\SangoUtils\\SangoTimer\\SangoTimer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\FantasyOfSango\\SangoUtils\\SangoTimer\\SangoTimer.csproj",
+        "projectUniqueName": "I:\\SangoUtils\\SangoUtils\\SangoTimer\\SangoTimer.csproj",
         "projectName": "SangoTimer",
-        "projectPath": "E:\\FantasyOfSango\\SangoUtils\\SangoTimer\\SangoTimer.csproj",
-        "packagesPath": "C:\\Users\\16022\\.nuget\\packages\\",
-        "outputPath": "E:\\FantasyOfSango\\SangoUtils\\SangoTimer\\obj\\",
+        "projectPath": "I:\\SangoUtils\\SangoUtils\\SangoTimer\\SangoTimer.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "I:\\SangoUtils\\SangoUtils\\SangoTimer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\16022\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -240,24 +240,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\FantasyOfSango\\SangoUtils\\Test\\App.csproj": {
+    "I:\\SangoUtils\\SangoUtils\\Test\\App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\FantasyOfSango\\SangoUtils\\Test\\App.csproj",
+        "projectUniqueName": "I:\\SangoUtils\\SangoUtils\\Test\\App.csproj",
         "projectName": "App",
-        "projectPath": "E:\\FantasyOfSango\\SangoUtils\\Test\\App.csproj",
-        "packagesPath": "C:\\Users\\16022\\.nuget\\packages\\",
-        "outputPath": "E:\\FantasyOfSango\\SangoUtils\\Test\\obj\\",
+        "projectPath": "I:\\SangoUtils\\SangoUtils\\Test\\App.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "I:\\SangoUtils\\SangoUtils\\Test\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\16022\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -273,17 +273,17 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "E:\\FantasyOfSango\\SangoUtils\\SangoIOCPNet\\SangoIOCPNet.csproj": {
-                "projectPath": "E:\\FantasyOfSango\\SangoUtils\\SangoIOCPNet\\SangoIOCPNet.csproj"
+              "I:\\SangoUtils\\SangoUtils\\SangoIOCPNet\\SangoIOCPNet.csproj": {
+                "projectPath": "I:\\SangoUtils\\SangoUtils\\SangoIOCPNet\\SangoIOCPNet.csproj"
               },
-              "E:\\FantasyOfSango\\SangoUtils\\SangoLog\\SangoLog.csproj": {
-                "projectPath": "E:\\FantasyOfSango\\SangoUtils\\SangoLog\\SangoLog.csproj"
+              "I:\\SangoUtils\\SangoUtils\\SangoLog\\SangoLog.csproj": {
+                "projectPath": "I:\\SangoUtils\\SangoUtils\\SangoLog\\SangoLog.csproj"
               },
-              "E:\\FantasyOfSango\\SangoUtils\\SangoPriorityQueue\\SangoPriorityQueue.csproj": {
-                "projectPath": "E:\\FantasyOfSango\\SangoUtils\\SangoPriorityQueue\\SangoPriorityQueue.csproj"
+              "I:\\SangoUtils\\SangoUtils\\SangoPriorityQueue\\SangoPriorityQueue.csproj": {
+                "projectPath": "I:\\SangoUtils\\SangoUtils\\SangoPriorityQueue\\SangoPriorityQueue.csproj"
               },
-              "E:\\FantasyOfSango\\SangoUtils\\SangoTimer\\SangoTimer.csproj": {
-                "projectPath": "E:\\FantasyOfSango\\SangoUtils\\SangoTimer\\SangoTimer.csproj"
+              "I:\\SangoUtils\\SangoUtils\\SangoTimer\\SangoTimer.csproj": {
+                "projectPath": "I:\\SangoUtils\\SangoUtils\\SangoTimer\\SangoTimer.csproj"
               }
             }
           }
@@ -313,7 +313,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

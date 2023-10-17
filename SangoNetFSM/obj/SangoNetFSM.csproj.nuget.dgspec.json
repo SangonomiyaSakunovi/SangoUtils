@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\FantasyOfSango\\SangoUtils\\SangoNetFSM\\SangoNetFSM.csproj": {}
+    "I:\\SangoUtils\\SangoUtils\\SangoNetFSM\\SangoNetFSM.csproj": {}
   },
   "projects": {
-    "E:\\FantasyOfSango\\SangoUtils\\SangoLog\\SangoLog.csproj": {
+    "I:\\SangoUtils\\SangoUtils\\SangoLog\\SangoLog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\FantasyOfSango\\SangoUtils\\SangoLog\\SangoLog.csproj",
+        "projectUniqueName": "I:\\SangoUtils\\SangoUtils\\SangoLog\\SangoLog.csproj",
         "projectName": "SangoLog",
-        "projectPath": "E:\\FantasyOfSango\\SangoUtils\\SangoLog\\SangoLog.csproj",
-        "packagesPath": "C:\\Users\\16022\\.nuget\\packages\\",
-        "outputPath": "E:\\FantasyOfSango\\SangoUtils\\SangoLog\\obj\\",
+        "projectPath": "I:\\SangoUtils\\SangoUtils\\SangoLog\\SangoLog.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "I:\\SangoUtils\\SangoUtils\\SangoLog\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\16022\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -60,24 +60,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\FantasyOfSango\\SangoUtils\\SangoNetFSM\\SangoNetFSM.csproj": {
+    "I:\\SangoUtils\\SangoUtils\\SangoNetFSM\\SangoNetFSM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\FantasyOfSango\\SangoUtils\\SangoNetFSM\\SangoNetFSM.csproj",
+        "projectUniqueName": "I:\\SangoUtils\\SangoUtils\\SangoNetFSM\\SangoNetFSM.csproj",
         "projectName": "SangoNetFSM",
-        "projectPath": "E:\\FantasyOfSango\\SangoUtils\\SangoNetFSM\\SangoNetFSM.csproj",
-        "packagesPath": "C:\\Users\\16022\\.nuget\\packages\\",
-        "outputPath": "E:\\FantasyOfSango\\SangoUtils\\SangoNetFSM\\obj\\",
+        "projectPath": "I:\\SangoUtils\\SangoUtils\\SangoNetFSM\\SangoNetFSM.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "I:\\SangoUtils\\SangoUtils\\SangoNetFSM\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\16022\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -93,8 +93,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "E:\\FantasyOfSango\\SangoUtils\\SangoLog\\SangoLog.csproj": {
-                "projectPath": "E:\\FantasyOfSango\\SangoUtils\\SangoLog\\SangoLog.csproj"
+              "I:\\SangoUtils\\SangoUtils\\SangoLog\\SangoLog.csproj": {
+                "projectPath": "I:\\SangoUtils\\SangoUtils\\SangoLog\\SangoLog.csproj"
               }
             }
           }
@@ -124,7 +124,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

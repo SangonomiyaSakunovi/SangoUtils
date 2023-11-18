@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "C39WRvDZ5aASODAgB4r3tWHGF4nm8jUWZEpsUX0v7gDKEG3yFA36Yt9rh+8Ofd41f7PSzsH/ZKeZMK6iXWkk5g==",
+  "dgSpecHash": "EZvqVVxJDSidR0SRUSH6y+d3/Cc9xUoOLoQZGpWb2ukTuxjrZhx0kL0QU31UNmGCLmLvazD/ubq4JDdFI+7QCw==",
   "success": true,
-  "projectFilePath": "I:\\SangoUtils\\SangoUtils\\Test\\App.csproj",
+  "projectFilePath": "E:\\FantasyOfSango\\SangoUtils\\Test\\App.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

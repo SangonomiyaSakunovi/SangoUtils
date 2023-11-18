@@ -1,3 +1,5 @@
 is_global = true
 build_property.RootNamespace = SangoJsonLoader
-build_property.ProjectDir = I:\SangoUtils\SangoUtils\SangoJsonLoader\
+build_property.ProjectDir = E:\FantasyOfSango\SangoUtils\SangoJsonLoader\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

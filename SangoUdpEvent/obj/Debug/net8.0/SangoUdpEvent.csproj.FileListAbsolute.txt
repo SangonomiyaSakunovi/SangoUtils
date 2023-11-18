@@ -1,0 +1,15 @@
+E:\FantasyOfSango\SangoUtils\SangoUdpEvent\bin\Debug\net8.0\SangoUdpEvent.exe
+E:\FantasyOfSango\SangoUtils\SangoUdpEvent\bin\Debug\net8.0\SangoUdpEvent.deps.json
+E:\FantasyOfSango\SangoUtils\SangoUdpEvent\bin\Debug\net8.0\SangoUdpEvent.runtimeconfig.json
+E:\FantasyOfSango\SangoUtils\SangoUdpEvent\bin\Debug\net8.0\SangoUdpEvent.dll
+E:\FantasyOfSango\SangoUtils\SangoUdpEvent\bin\Debug\net8.0\SangoUdpEvent.pdb
+E:\FantasyOfSango\SangoUtils\SangoUdpEvent\obj\Debug\net8.0\SangoUdpEvent.GeneratedMSBuildEditorConfig.editorconfig
+E:\FantasyOfSango\SangoUtils\SangoUdpEvent\obj\Debug\net8.0\SangoUdpEvent.AssemblyInfoInputs.cache
+E:\FantasyOfSango\SangoUtils\SangoUdpEvent\obj\Debug\net8.0\SangoUdpEvent.AssemblyInfo.cs
+E:\FantasyOfSango\SangoUtils\SangoUdpEvent\obj\Debug\net8.0\SangoUdpEvent.csproj.CoreCompileInputs.cache
+E:\FantasyOfSango\SangoUtils\SangoUdpEvent\obj\Debug\net8.0\SangoUdpEvent.sourcelink.json
+E:\FantasyOfSango\SangoUtils\SangoUdpEvent\obj\Debug\net8.0\SangoUdpEvent.dll
+E:\FantasyOfSango\SangoUtils\SangoUdpEvent\obj\Debug\net8.0\refint\SangoUdpEvent.dll
+E:\FantasyOfSango\SangoUtils\SangoUdpEvent\obj\Debug\net8.0\SangoUdpEvent.pdb
+E:\FantasyOfSango\SangoUtils\SangoUdpEvent\obj\Debug\net8.0\SangoUdpEvent.genruntimeconfig.cache
+E:\FantasyOfSango\SangoUtils\SangoUdpEvent\obj\Debug\net8.0\ref\SangoUdpEvent.dll

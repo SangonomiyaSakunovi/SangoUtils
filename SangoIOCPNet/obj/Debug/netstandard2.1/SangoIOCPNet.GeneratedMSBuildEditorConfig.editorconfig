@@ -1,3 +1,5 @@
 is_global = true
 build_property.RootNamespace = SangoIOCPNet
-build_property.ProjectDir = I:\SangoUtils\SangoUtils\SangoIOCPNet\
+build_property.ProjectDir = E:\FantasyOfSango\SangoUtils\SangoIOCPNet\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

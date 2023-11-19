@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SangoUdpEvent")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bc50e78c45ae436b25a28d1feb39e641d612ee07")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8a87c2697d66d8f412ea5714ce76efd57bed23e")]
 [assembly: System.Reflection.AssemblyProductAttribute("SangoUdpEvent")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SangoUdpEvent")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
